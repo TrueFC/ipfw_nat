@@ -1,0 +1,3 @@
+[run time path]
+etc/rc.firewall -> etc/rc.firewall
+libexec/rc/rc.conf -> etc/defaults/rc.conf
