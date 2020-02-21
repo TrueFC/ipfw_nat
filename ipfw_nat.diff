@@ -1,27 +1,26 @@
-Index: etc/rc.firewall
-===================================================================
---- etc/rc.firewall	(revision 339677)
-+++ etc/rc.firewall	(working copy)
-@@ -170,6 +170,10 @@
- 	case ${firewall_nat_enable} in
- 	[Yy][Ee][Ss])
- 		if [ -n "${firewall_nat_interface}" ]; then
-+			if [ -n "${firewall_nat_rules}" -a -r ${firewall_nat_rules} ]; then
-+				firewall_nat_flags="${firewall_nat_flags} $(cat ${firewall_nat_rules})"
-+			fi
-+
- 			if echo "${firewall_nat_interface}" | \
- 				grep -q -E '^[0-9]+(\.[0-9]+){0,3}$'; then
- 				firewall_nat_flags="ip ${firewall_nat_interface} ${firewall_nat_flags}"
 Index: libexec/rc/rc.conf
 ===================================================================
---- libexec/rc/rc.conf	(revision 339677)
+--- libexec/rc/rc.conf	(revision 356739)
 +++ libexec/rc/rc.conf	(working copy)
 @@ -178,6 +178,7 @@
  firewall_nat_enable="NO"	# Enable kernel NAT (if firewall_enable == YES)
  firewall_nat_interface=""	# Public interface or IPaddress to use
  firewall_nat_flags=""		# Additional configuration parameters
 +firewall_nat_rules=""		# File of parameters followed by firewall_nat_flags
- dummynet_enable="NO"		# Load the dummynet(4) module
- ipfw_netflow_enable="NO"	# Enable netflow logging via ng_netflow
- ip_portrange_first="NO"		# Set first dynamically allocated port
+ firewall_nat64_enable="NO"	# Enable kernel NAT64 module.
+ firewall_nptv6_enable="NO"	# Enable kernel NPTv6 module.
+ firewall_pmod_enable="NO"	# Enable kernel protocols modification module.
+Index: libexec/rc/rc.firewall
+===================================================================
+--- libexec/rc/rc.firewall	(revision 356739)
++++ libexec/rc/rc.firewall	(working copy)
+@@ -170,6 +170,9 @@
+ 	case ${firewall_nat_enable} in
+ 	[Yy][Ee][Ss])
+ 		if [ -n "${firewall_nat_interface}" ]; then
++			if [ -n "${firewall_nat_rules}" -a -r ${firewall_nat_rules} ]; then
++				firewall_nat_flags="${firewall_nat_flags} $(cat ${firewall_nat_rules})"
++			fi
+ 			if echo "${firewall_nat_interface}" | \
+ 				grep -q -E '^[0-9]+(\.[0-9]+){0,3}$'; then
+ 				firewall_nat_flags="ip ${firewall_nat_interface} ${firewall_nat_flags}"

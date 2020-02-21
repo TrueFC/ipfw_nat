@@ -23,11 +23,3 @@ firewall_nat_flags が長くなり、かつ、ちょっと変更するのにも�
 	redirect_port	tcp 192.168.1.2:80	80
 	redirect_port	tcp 192.168.1.3:21	21
 	  :
-
----
-
-## タグの更新履歴
-
-* **13.0-CURRENT-r339677** (Wed 12 Dec 2018 07:25:34)
-
-	FreeBSD 13.0-CURRENT リビジョン 339677 用
