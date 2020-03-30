@@ -1,8 +1,8 @@
 Index: libexec/rc/rc.conf
 ===================================================================
---- libexec/rc/rc.conf	(revision 356739)
+--- libexec/rc/rc.conf	(revision 359315)
 +++ libexec/rc/rc.conf	(working copy)
-@@ -178,6 +178,7 @@
+@@ -179,6 +179,7 @@
  firewall_nat_enable="NO"	# Enable kernel NAT (if firewall_enable == YES)
  firewall_nat_interface=""	# Public interface or IPaddress to use
  firewall_nat_flags=""		# Additional configuration parameters
@@ -12,7 +12,7 @@ Index: libexec/rc/rc.conf
  firewall_pmod_enable="NO"	# Enable kernel protocols modification module.
 Index: libexec/rc/rc.firewall
 ===================================================================
---- libexec/rc/rc.firewall	(revision 356739)
+--- libexec/rc/rc.firewall	(revision 359315)
 +++ libexec/rc/rc.firewall	(working copy)
 @@ -170,6 +170,9 @@
  	case ${firewall_nat_enable} in
