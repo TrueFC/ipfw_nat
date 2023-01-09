@@ -1,8 +1,8 @@
 diff --git a/libexec/rc/rc.conf b/libexec/rc/rc.conf
-index b392dae9ae6c..3ea9c3c57bad 100644
+index 0495e003b9c5..1c46b22f8389 100644
 --- a/libexec/rc/rc.conf
 +++ b/libexec/rc/rc.conf
-@@ -183,6 +183,7 @@ firewall_nologports="135-139,445 1026,1027 1433,1434" # List of TCP/UDP ports
+@@ -194,6 +194,7 @@ firewall_nologports="135-139,445 1026,1027 1433,1434" # List of TCP/UDP ports
  firewall_nat_enable="NO"	# Enable kernel NAT (if firewall_enable == YES)
  firewall_nat_interface=""	# Public interface or IPaddress to use
  firewall_nat_flags=""		# Additional configuration parameters
