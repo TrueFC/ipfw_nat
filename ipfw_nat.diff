@@ -1,5 +1,5 @@
 diff --git a/libexec/rc/rc.conf b/libexec/rc/rc.conf
-index 06fda945e86e..af678b0c70b4 100644
+index 8884fab7e016..c045cb53c403 100644
 --- a/libexec/rc/rc.conf
 +++ b/libexec/rc/rc.conf
 @@ -199,6 +199,7 @@ firewall_nologports="135-139,445 1026,1027 1433,1434" # List of TCP/UDP ports
