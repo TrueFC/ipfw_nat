@@ -1,8 +1,8 @@
 diff --git a/libexec/rc/rc.conf b/libexec/rc/rc.conf
-index 8884fab7e016..c045cb53c403 100644
+index 26e189953044..0924303f9b29 100644
 --- a/libexec/rc/rc.conf
 +++ b/libexec/rc/rc.conf
-@@ -199,6 +199,7 @@ firewall_nologports="135-139,445 1026,1027 1433,1434" # List of TCP/UDP ports
+@@ -198,6 +198,7 @@ firewall_nologports="135-139,445 1026,1027 1433,1434" # List of TCP/UDP ports
  firewall_nat_enable="NO"	# Enable kernel NAT (if firewall_enable == YES)
  firewall_nat_interface=""	# Public interface or IPaddress to use
  firewall_nat_flags=""		# Additional configuration parameters
@@ -11,10 +11,10 @@ index 8884fab7e016..c045cb53c403 100644
  firewall_nptv6_enable="NO"	# Enable kernel NPTv6 module.
  firewall_pmod_enable="NO"	# Enable kernel protocols modification module.
 diff --git a/libexec/rc/rc.firewall b/libexec/rc/rc.firewall
-index ee08a3252566..882bc74f84de 100644
+index e4fc8cc3db78..cf5b54d2da99 100644
 --- a/libexec/rc/rc.firewall
 +++ b/libexec/rc/rc.firewall
-@@ -170,6 +170,9 @@ case ${firewall_type} in
+@@ -169,6 +169,9 @@ case ${firewall_type} in
  	case ${firewall_nat_enable} in
  	[Yy][Ee][Ss])
  		if [ -n "${firewall_nat_interface}" ]; then
